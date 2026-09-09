@@ -2,47 +2,23 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- 🌟 宣告為 Apple 全螢幕 Web App，並處理瀏海安全區 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>超級荳子</title>
+  
   <link rel="apple-touch-icon" href="https://yichun1121.github.io/readingApp/icons/Dauz.png">
   <link rel="icon" href="https://yichun1121.github.io/readingApp/icons/StampBook.png">
+
   <style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; text-align: center; background: #d8e9ef; color: #454552; padding: 30px 20px; margin: 0; }
-    .instruction-box { background: white; padding: 25px 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); display: none; max-width: 400px; margin: 0 auto; }
-    .icon-preview { width: 100px; height: 100px; border-radius: 22px; margin-bottom: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
-    h2 { color: #4ea1d3; margin-top: 10px; }
-    p { font-size: 16px; line-height: 1.5; color: #666; }
-    .highlight { color: #e85a71; font-weight: bold; }
+    /* 消除所有邊界，讓 Iframe 像電視牆一樣佔滿整個手機螢幕 */
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #d8e9ef; }
+    iframe { width: 100%; height: 100%; border: none; }
   </style>
 </head>
 <body>
-  <div id="loadingMsg">
-    <h2>🚀 系統偵測中...</h2>
-  </div>
-
-  <div id="installUI" class="instruction-box">
-    <img class="icon-preview" src="https://yichun1121.github.io/readingApp/icons/Dauz.png">
-    <h2>請加入主畫面</h2>
-    <p>為了顯示專屬圖示並獲得最佳體驗：</p>
-    <p>1. 點擊下方工具列的「<b>分享</b>」按鈕<br>（帶有向上箭頭的方框）</p>
-    <p>2. 選擇「<b>加入主畫面</b>」</p>
-    <p class="highlight" style="font-size: 14px; margin-top: 20px;">安裝完成後，請直接從手機桌面啟動！</p>
-  </div>
-
-  <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbxec75PNG4qEOu_ltXy7n3XAbiwD8amBl2vvaecv0zmFwFa23XERzI1-ZtRhAFQbKfa6Q/exec";
-    const TOKEN = "TLRU62.4Y7";
-    const targetUrl = `${GAS_URL}?token=${TOKEN}`;
-
-    // 🌟 核心智慧判斷邏輯
-    if (window.navigator.standalone === true) {
-      // 情境 A：從手機主畫面開啟 -> 零秒轉跳
-      window.location.replace(targetUrl);
-    } else {
-      // 情境 B：從一般瀏覽器開啟 -> 攔截轉跳，顯示安裝教學
-      document.getElementById('loadingMsg').style.display = 'none';
-      document.getElementById('installUI').style.display = 'block';
-    }
-  </script>
+  <!-- 🌟 直接內嵌專屬的 GAS 網址與 Token -->
+  <iframe src="https://script.google.com/macros/s/AKfycbxec75PNG4qEOu_ltXy7n3XAbiwD8amBl2vvaecv0zmFwFa23XERzI1-ZtRhAFQbKfa6Q/exec?token=TLRU62.4Y7" scrolling="yes"></iframe>
 </body>
 </html>
