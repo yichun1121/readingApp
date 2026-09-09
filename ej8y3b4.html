@@ -2,27 +2,18 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>無敵呱屁</title>
-  
-  <!-- 🌟 關鍵：提供給 Apple Safari 抓取的完美 App 圖示 -->
   <link rel="apple-touch-icon" href="https://yichun1121.github.io/readingApp/icons/Quack.png">
   <link rel="icon" href="https://yichun1121.github.io/readingApp/icons/StampBook.png">
-
   <style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; text-align: center; background: #d8e9ef; color: #454552; padding-top: 50px; }
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #d8e9ef; }
+    iframe { width: 100%; height: 100%; border: none; }
   </style>
-
-  <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbxec75PNG4qEOu_ltXy7n3XAbiwD8amBl2vvaecv0zmFwFa23XERzI1-ZtRhAFQbKfa6Q/exec";
-    const TOKEN = "J62U6EJ8QU4";
-    
-    // 使用 replace 方法轉址，避免使用者按上一頁時陷入無限轉跳迴圈
-    window.location.replace(`${GAS_URL}?token=${TOKEN}`);
-  </script>
 </head>
 <body>
-  <h2>🚀 準備進入打卡系統...</h2>
-  <p>正在為無敵呱屁載入資料</p>
+  <iframe src="https://script.google.com/macros/s/AKfycbxec75PNG4qEOu_ltXy7n3XAbiwD8amBl2vvaecv0zmFwFa23XERzI1-ZtRhAFQbKfa6Q/exec?token=J62U6EJ8QU4" scrolling="yes"></iframe>
 </body>
 </html>
