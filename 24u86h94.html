@@ -8,14 +8,33 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>超級荳子</title>
   
-  <link rel="apple-touch-icon" href="https://yichun1121.github.io/readingApp/icons/Dauz.png">
-  <link rel="icon" href="https://yichun1121.github.io/readingApp/icons/StampBook.png">
-
+  <link rel="apple-touch-icon" href="https://yichun1121.github.io/readingApp/icons/StampBook.png">
+  <link rel="icon" href="https://yichun1121.github.io/readingApp/icons/StampBook.ico">
+  
   <style>
-    /* 消除所有邊界，讓 Iframe 像電視牆一樣佔滿整個手機螢幕 */
-    body, html { margin: 0; padding-top: max(20px, env(safe-area-inset-top));
-                box-sizing: border-box;
-    iframe { width: 100%; height: 100%; border: none; }
+    /* 1. 設定底層畫布，防止捲軸溢出 */
+    html {
+      height: 100%;
+      overflow: hidden;
+      background-color: #d8e9ef;
+    }
+    
+    /* 2. 將 body 設為彈性容器，並套用智慧避讓量尺 */
+    body {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: max(20px, env(safe-area-inset-top));
+      box-sizing: border-box;
+    }
+    
+    /* 3. 讓 iframe 自動填滿扣除頂部空間後的所有剩餘高度 */
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
   </style>
 </head>
 <body>
